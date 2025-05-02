@@ -1,0 +1,43 @@
+{% extends 'app/base.html' %}
+{% load static %}
+{% block title %}Login{% endblock title %}
+{% block main-content %}
+<div class="container">
+  <div class="row my-3">
+    <div class="col-sm-6 offset-sm-3">
+      <h3>Login</h3>
+      <hr>
+
+      <form action="" method="post" novalidate class="shadow p-5">
+        {% csrf_token %}
+        {% for fm in form %}
+          <div class="form-group mb-3" style="display: flex; flex-direction: column;">
+            <label style="font-weight: 600; margin-bottom: 5px;">{{ fm.label }}</label>
+            <input type="{{ fm.field.widget.input_type }}" name="{{ fm.name }}" value="{{ fm.value|default_if_none:'' }}" style="width: 100%; padding: 8px; border: 1px solid #ccc; border-radius: 5px;">
+            <small class="text-danger" style="margin-top: 5px;">{{ fm.errors|striptags }}</small>
+          </div>
+        {% endfor %}
+
+        {% if form.non_field_errors %}
+          {% for error in form.non_field_errors %}
+            <div class="alert alert-danger my-2">{{ error }}</div>
+          {% endfor %}
+        {% endif %}
+
+        <div class="mb-3">
+          <small><a href="{% url 'password_reset' %}" class="text-danger">Forgot Password?</a></small>
+        </div>
+
+        <button type="submit" class="btn btn-primary">Login</button>
+
+        <div class="text-center text-primary fw-bold mt-3">
+          <small>Don't have an account? 
+            <a href="{% url 'customerregistration' %}" class="text-danger">Register Now</a>
+          </small>
+        </div>
+
+      </form>
+    </div>
+  </div>
+</div>
+{% endblock main-content %}
