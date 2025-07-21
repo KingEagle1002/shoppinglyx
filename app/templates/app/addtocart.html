@@ -18,14 +18,14 @@
        <h5>{{cart.product.title}}</h5>
        <p class="mb-2 text-muted small">{{cart.product.description}}</p>
        <div class="my-3">
-        <label for="quantity">Quantity:</label>
-        <a class="minus-cart btn" pid="{{cart.product.id}}"><i class="fas fa-minus-square fa-lg"></i></a>
-          <span id="quantity">{{cart.quantity}}</span>
-        <a class="plus-cart btn"pid="{{cart.product.id}}"><i class="fas fa-plus-square fa-lg"></i></a>
-       </div> 
-       <div class="d-flex justify-content-between">
-        <a href="#" class="btn btn-sm btn-secondary mr-3 remove-cart"pid="{{cart.product.id}}">Remove item </a>
-        <p class="mb-0"><span><strong>Rs. {{cart.product.discounted_price}}</strong></span></p>
+          <label for="quantity">Quantity:</label>
+          <a class="minus-cart btn" pid="{{cart.product.id}}"><i class="fas fa-minus-square fa-lg"></i></a>
+            <span id="quantity">{{cart.quantity}}</span>
+          <a class="plus-cart btn"pid="{{cart.product.id}}"><i class="fas fa-plus-square fa-lg"></i></a>
+        </div> 
+        <div class="d-flex justify-content-between">
+          <a href="#" class="btn btn-sm btn-secondary mr-3 remove-cart"pid="{{cart.product.id}}">Remove item </a>
+          <p class="mb-0"><span><strong>Rs. {{cart.product.discounted_price}}</strong></span></p>
        </div>
       </div>
      </div>

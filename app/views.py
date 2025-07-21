@@ -8,6 +8,7 @@ from django.http import JsonResponse
 from django.db.models import Q
 from django.contrib.auth.decorators import login_required
 from django.utils.decorators import method_decorator
+from django.http import HttpResponse
 
 # Create your views here.
 # Product View
@@ -227,7 +228,7 @@ class CustomerRegistrationView(View):
             form.save()
         return render(request, 'app/customerregistration.html', {'form': form})
 
-# Change Password
+# Check out
 @login_required
 def checkout(request):
     user = request.user
@@ -243,7 +244,7 @@ def checkout(request):
     totalamount = amount + shipping_amount
     
     return render(request, 'app/checkout.html', {'add': add, 'cart_items': cart_items, 'totalamount': totalamount})
-from django.http import HttpResponse
+
 
 # Payment Done
 @login_required

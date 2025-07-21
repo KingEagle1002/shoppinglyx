@@ -7,6 +7,7 @@ from .forms import LoginForm, MyPasswordChangeForm,MyPasswordResetForm,MySetPass
 urlpatterns = [
 # Home Panel URL
     path('', views.ProductView.as_view(), name='home'),
+
 # Product View URL
     path('product-detail/<int:pk>', views.ProductDetailView.as_view(), name='product-detail'),
 # Cart URL
